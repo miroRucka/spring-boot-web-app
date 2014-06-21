@@ -1,5 +1,6 @@
 package sk.mirorucka.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sk.mirorucka.domain.CreditCard;
 import sk.mirorucka.domain.Provider;
@@ -13,24 +14,27 @@ import java.util.List;
 @Service("cardService")
 public class CardServiceImpl implements CardService {
 
+    @Autowired
+    private CreditCardDao dao;
+
     @Override
-    public void addCard(CreditCard card) {
-        //To change body of implemented methods use File | Settings | File Templates.
+    public boolean createOrUpdate(CreditCard card) {
+        return dao.persist(card);
     }
 
     @Override
-    public void deleteCard(Long id) {
-        //To change body of implemented methods use File | Settings | File Templates.
+    public boolean deleteCard(Long id) {
+        return dao.delete(id);
     }
 
     @Override
-    public void updateCard(CreditCard card) {
-        //To change body of implemented methods use File | Settings | File Templates.
+    public CreditCard readCard(Long id) {
+        return dao.read(id);
     }
 
     @Override
     public List<CreditCard> findCards() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return dao.findAll();
     }
 
     @Override

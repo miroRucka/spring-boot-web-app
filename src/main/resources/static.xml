@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="1" class="sk.mirorucka.domain.CreditCard">
+        <property name="id" value="1"/>
+        <property name="owner" value="Miroslav Rúčka"/>
+        <property name="cardNumber" value="25"/>
+        <property name="provider" value="SLSP"/>
+        <property name="validTo">
+            <bean class="java.util.Date">
+                <constructor-arg index="0" value="2020"/>
+                <constructor-arg index="1" value="6"/>
+                <constructor-arg index="2" value="4"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="2" class="sk.mirorucka.domain.CreditCard">
+        <property name="id" value="2"/>
+        <property name="owner" value="Jano Peťo"/>
+        <property name="cardNumber" value="4785"/>
+        <property name="provider" value="MBANK"/>
+        <property name="validTo">
+            <bean class="java.util.Date">
+                <constructor-arg index="0" value="2016"/>
+                <constructor-arg index="1" value="2"/>
+                <constructor-arg index="2" value="11"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="cards" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="1"/>
+                <ref bean="2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

@@ -10,9 +10,9 @@ import java.util.List;
  * @author rucka
  */
 public interface CardService {
-    void addCard(CreditCard card);
-    void deleteCard(Long id);
-    void updateCard(CreditCard card);
+    boolean createOrUpdate(CreditCard card);
+    boolean deleteCard(Long id);
+    CreditCard readCard(Long id);
     List<CreditCard> findCards();
     List<Provider> findProviders();
 }

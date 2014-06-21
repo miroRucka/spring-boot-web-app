@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition name="base" template="/WEB-INF/layouts/layout.jsp">
+        <put-attribute name="body" value=""/>
+    </definition>
+
+    <definition name="addCard" extends="base">
+        <put-attribute name="body" value="/WEB-INF/jsp/add.jsp"/>
+    </definition>
+
+    <definition name="listCards" extends="base">
+        <put-attribute name="body" value="/WEB-INF/jsp/list.jsp"/>
+    </definition>
+</tiles-definitions>

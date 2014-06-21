@@ -13,6 +13,9 @@ public class CreditCard {
     private Date validTo;
     private String owner;
 
+    public CreditCard() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -51,5 +54,19 @@ public class CreditCard {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CreditCard that = (CreditCard) o;
+        if (!id.equals(that.id)) return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
     }
 }
