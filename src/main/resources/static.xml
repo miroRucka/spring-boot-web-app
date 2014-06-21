@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="1" class="sk.mirorucka.domain.CreditCard">
         <property name="id" value="1"/>
-        <property name="owner" value="Miroslav Rúčka"/>
+        <property name="owner" value="Miroslav Rucka"/>
         <property name="cardNumber" value="25"/>
         <property name="provider" value="SLSP"/>
         <property name="validTo">
@@ -17,7 +17,7 @@
     </bean>
     <bean id="2" class="sk.mirorucka.domain.CreditCard">
         <property name="id" value="2"/>
-        <property name="owner" value="Jano Peťo"/>
+        <property name="owner" value="Jano Peto"/>
         <property name="cardNumber" value="4785"/>
         <property name="provider" value="MBANK"/>
         <property name="validTo">

@@ -7052,3 +7052,12 @@ button.close {
 nav ul {
     margin-top: 5px;
 }
+
+.alert.card{
+    padding: 3px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+

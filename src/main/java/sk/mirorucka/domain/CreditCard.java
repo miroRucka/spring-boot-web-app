@@ -1,5 +1,10 @@
 package sk.mirorucka.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -8,9 +13,14 @@ import java.util.Date;
 public class CreditCard {
 
     private Long id;
+    @NotNull
     private Provider provider;
+    @NotNull
     private String cardNumber;
+    @DateTimeFormat(pattern="dd.MM.yyyy")
+    @NotNull
     private Date validTo;
+    @NotNull
     private String owner;
 
     public CreditCard() {
@@ -60,13 +70,16 @@ public class CreditCard {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         CreditCard that = (CreditCard) o;
-        if (!id.equals(that.id)) return false;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+
         return true;
     }
 
     @Override
     public int hashCode() {
-        return id.hashCode();
+        return id != null ? id.hashCode() : 0;
     }
 }
