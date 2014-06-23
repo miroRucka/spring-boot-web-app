@@ -8,8 +8,11 @@ Configuration is without xml (web.xml, context.xml, etc.)
 How to run it?
 
 git clone this project
+
 cd spring-boot-web-app
+
 mvn clean package
+
 and java sk.mirorucka.spring.Launcher 
 
 you can see some test in sk.mirorucka.ServiceTest in TestNG framework
