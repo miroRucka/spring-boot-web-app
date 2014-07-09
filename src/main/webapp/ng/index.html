@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>cards app</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+</head>
+<body ng-app="newgen">
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Cards demo</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+            <ul class="nav nav-pills">
+                <li class=""><a href="/">Nová karta</a></li>
+                <li class=""><a href="/cards">Všetky karty</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container" ng-controller="NewGenController">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Číslo karty</th>
+            <th>Poskytovateľ</th>
+            <th>Platnosť</th>
+            <th>Vlastník</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="card in cards">
+                <td>{{$index}}</td>
+                <td>{{card.cardNumber}}</td>
+                <td>{{card.provider}}</td>
+                <td>{{card.validTo | date:'dd.MM.yyyy'}}</td>
+                <td>{{card.owner}}</td>
+                <td class="card center">
+                    <a href="/update/{{card.id}}"><span class="label label-warning">Editovať</span></a>
+                </td>
+                <td class="card center">
+                    <a href="/delete/{{card.id}}"><span class="label label-danger">Zmazať</span></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../js/vendor/angular.min.js" defer="defer"></script>
+<script src="../js/ng.js" defer="defer"></script>
+</body>
+</html>
